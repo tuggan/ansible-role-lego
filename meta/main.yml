@@ -1,0 +1,18 @@
+galaxy_info:
+  author: Dennis Vesterlund
+  description: Deploy and configure lego (https://go-acme.github.io/lego/)
+
+  issue_tracker_url: https://gitlab.com/Vestern/ansible-role-lego/-/issues
+
+  license: BSD-3-Clause
+
+  min_ansible_version: 2.10
+
+  galaxy_tags: []
+    - ansible
+    - lego
+    - lets-encrypt
+    - certificate
+
+dependencies: []
+

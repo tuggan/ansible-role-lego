@@ -1,0 +1,5 @@
+---
+# defaults file for lego
+
+lego_binary: /usr/bin/lego
+lego_base_dir: /etc/lego
