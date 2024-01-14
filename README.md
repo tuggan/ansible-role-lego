@@ -11,19 +11,26 @@ None.
 Role Variables
 --------------
 
- - `lego_accept_tos`: Accept legos TOS, **will get stuck waiting for TOS acceptance if this is not set**.
- - `lego_binary`: Where the lego binary is located.
- - `lego_base_dir`: Where the lego binary will be run. The certificates will be available inside `{{ lego_base_dir }}/.lego`.
- - `lego_email`: The email to use for the requests.
- - `lego_dns`: If set, specifies that dns proof should be used, and with what provider.
- - `lego_domains`: List of domains to get certificates for.
-   - `domain`: The domain.
-   - `user`: Owner for the certificate files.
-   - `group`: Group for the certificate files.
-   - `privmode`: File mode for the private key.
-   - `pubmode`: File mode for the public certificate.
- - `lego_disable_cp`: Option for enabling the `disable-cp` flag.
- - `lego_env`: Dictionary of environment variables to add when running the commands.
+| Variable        | Required | Default       | Description                                                                                               |
+| --------------- | -------- | ------------- | --------------------------------------------------------------------------------------------------------- |
+| lego_accept_tos | Yes      |               | Accept legos TOS, **will get stuck waiting for TOS acceptance if this is not set**.                       |
+| lego_email      | Yes      |               | The email to use for the requests.                                                                        |
+| lego_domains    | Yes      |               | List of domains to get certificates for. See table below for options                                      |
+| lego_dns        | No       |               | If set, specifies that dns proof should be used, and with what provider.                                  |
+| lego_disable_cp | No       |               | Option for enabling the `disable-cp` flag.                                                                |
+| lego_env        | No       |               | Dictionary of environment variables to add when running the commands.                                     |
+| lego_binary     | No       | /usr/bin/lego | lego binary is location.                                                                                  |
+| lego_base_dir   | No       | /etc/lego     | Where the lego binary will be run. The certificates will be available inside `{{ lego_base_dir }}/.lego`. |
+
+## lego_domains
+
+| Name     | Required | Default | Description                           |
+| -------- | -------- | ------- | ------------------------------------- |
+| domain   | Yes      |         | The domain.                           |
+| user     | No       |         | Owner for the certificate files.      |
+| group    | No       |         | Group for the certificate files.      |
+| privmode | No       |         | File mode for the private key.        |
+| pubmode  | No       |         | File mode for the public certificate. |
 
 
 Dependencies
